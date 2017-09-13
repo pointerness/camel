@@ -1,0 +1,16 @@
+# the name of Camel
+camel:
+  springboot:
+    name: MyCamel
+routes:
+  routeList:
+      -
+        routeId: route1
+        source: file://inbox1
+        destinations: file://outbox1
+      -
+        routeId: route2
+        source: file://inbox2
+        destinations:
+        - file://outbox1
+        - file://outbox2
