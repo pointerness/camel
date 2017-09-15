@@ -4,12 +4,11 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>com.infy.camel.microservices</groupId>
-		<artifactId>camel-microservices</artifactId>
+		<groupId>brainless.labs.camel</groupId>
+		<artifactId>camel-research</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../CamelMicroservices</relativePath>
 	</parent>
-	<groupId>com.infy.camel.microservices.accounts</groupId>
+	<groupId>brainless.labs.camel.microservices</groupId>
 	<artifactId>accounts-service</artifactId>
 	<packaging>war</packaging>
 	<name>accounts-service Maven Webapp</name>

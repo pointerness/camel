@@ -21,7 +21,7 @@ To run the example type
 
 You can also execute the JAR directly:
 
-  java -jar target/camel.demo-0.0.1-SNAPSHOT.jar
+  java -jar target/camel-testing-0.0.1-SNAPSHOT.jar
 
 You will see the message printed to the console every second.
 
