@@ -18,7 +18,7 @@ public class DynamicRouteBuilder extends RouteBuilder
     public void configure() throws Exception
     {
 	String[] destinations = route.getDestinations().toArray(new String[route.getDestinations().size()]);
-	from(route.getSource()).routeId(route.getRouteId()).multicast().to(destinations);
+	from(route.getSource().getPath()).routeId(route.getRouteId()).multicast().to(destinations);
 
     }
 

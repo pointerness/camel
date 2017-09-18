@@ -1,17 +1,17 @@
 package brainless.labs.camel.demo.config;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-@Component
-@ConfigurationProperties(prefix = "routes.routeList")
+
 public class Route
 {
     private String routeId;
-    private String source;
-    private List<String> destinations;
+    private RouteDefinition source;
+    private final List<RouteDefinition> destinations = new ArrayList<>();
 
     public String getRouteId()
     {
@@ -23,23 +23,16 @@ public class Route
 	this.routeId = routeId;
     }
 
-    public String getSource()
-    {
-	return source;
-    }
+	public RouteDefinition getSource() {
+		return source;
+	}
 
-    public void setSource(String source)
-    {
-	this.source = source;
-    }
+	public void setSource(RouteDefinition source) {
+		this.source = source;
+	}
 
-    public List<String> getDestinations()
-    {
-	return destinations;
-    }
+	public List<RouteDefinition> getDestinations() {
+		return destinations;
+	}
 
-    public void setDestinations(List<String> destinations)
-    {
-	this.destinations = destinations;
-    }
 }

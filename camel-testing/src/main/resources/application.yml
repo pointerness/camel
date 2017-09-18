@@ -6,11 +6,36 @@ routes:
   routeList:
       -
         routeId: route1
-        source: file://inbox1
-        destinations: file://outbox1
+        source: 
+          path: file://inbox1
+          camelConfig: 
+            delay: 2000
+            doneFileName: archive
+            readLock: changed          
+        destinations:
+        -
+          path: file://outbox1
+          camelConfig: 
+            delay: 1000
+            doneFileName: archive
+            readLock: changed
+          optionalConfig:
+            propKey: propValue
       -
         routeId: route2
-        source: file://inbox2
+        source: 
+          path: file://inbox2
+          camelConfig:
+            delay: 2000
+            doneFileName: archive
+            readLock: changed          
         destinations:
-        - file://outbox1
-        - file://outbox2
+        -
+          path: file://outbox1
+          camelConfig:           
+          optionalConfig:
+            propKey: propValue
+        -
+          path: file://outbox2
+          optionalConfig:
+            propKey: propValue        

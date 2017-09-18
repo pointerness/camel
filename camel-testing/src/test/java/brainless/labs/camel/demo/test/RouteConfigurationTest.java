@@ -12,15 +12,15 @@ import brainless.labs.camel.demo.config.RouteConfig;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest()
-public class RouteConfigurationTest
-{
-    @Resource
-    RouteConfig routeConfig;
-    @Test
-    public void testConfig(){
-	Assert.assertNotNull(routeConfig);
-	Assert.assertFalse(routeConfig.getRouteList().isEmpty());
-	Assert.assertFalse(routeConfig.getRouteList().get(0).getSource().isEmpty());
-	Assert.assertFalse(routeConfig.getRouteList().get(0).getDestinations().isEmpty());
-    }
+public class RouteConfigurationTest {
+	@Resource
+	RouteConfig routeConfig;
+
+	@Test
+	public void testConfig() {
+		Assert.assertNotNull(routeConfig);
+		Assert.assertFalse(routeConfig.getRouteList().isEmpty());
+		Assert.assertNotNull(routeConfig.getRouteList().get(0).getSource());
+		Assert.assertFalse(routeConfig.getRouteList().get(0).getDestinations().isEmpty());
+	}
 }
