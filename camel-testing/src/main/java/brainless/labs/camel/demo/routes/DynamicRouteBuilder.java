@@ -25,14 +25,13 @@ public class DynamicRouteBuilder extends RouteBuilder {
 
 			@Override
 			public void process(Exchange exchange) throws Exception {
-				InputStream inputStream= GenericFileConverter.genericFileToInputStream((GenericFile<?>) exchange.getIn().getMandatoryBody(),
-						exchange);
+				InputStream inputStream = GenericFileConverter
+						.genericFileToInputStream((GenericFile<?>) exchange.getIn().getMandatoryBody(), exchange);
 				exchange.getOut().setBody(inputStream);
 			}
 		});
-		// String[] destinations = route.getDestinations().toArray();
 		String[] destinations = new String[route.getDestinations().size()];
-		route.getDestinations().stream().map(r -> r.getPath()).collect(Collectors.toList()).toArray(destinations);
+		route.getDestinations().stream().map(r -> r.getURL()).collect(Collectors.toList()).toArray(destinations);
 		from(route.getSource().getPath()).routeId(route.getRouteId()).multicast().to(destinations);
 
 	}
