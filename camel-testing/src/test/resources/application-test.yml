@@ -1,0 +1,26 @@
+# the name of Camel
+camel:
+  springboot:
+    name: MyCamelTest
+    main-run-controller: true
+    
+routes:
+  routeList:
+      -
+        routeId: route1
+        source: 
+          path: file://test/inbox1
+          camelConfig: 
+            delay: 2000
+            doneFileName: archive
+            readLock: changed          
+        destinations:
+        -
+          path: file://test/outbox1
+          camelConfig: 
+            delay: 1000
+            doneFileName: archive
+            readLock: changed
+          optionalConfig:
+            propKey: propValue
+  

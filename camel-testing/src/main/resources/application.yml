@@ -2,6 +2,8 @@
 camel:
   springboot:
     name: MyCamel
+    main-run-controller: true
+    
 routes:
   routeList:
       -
